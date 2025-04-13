@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+        max-height: 0;
+overflow: hidden;
+
+        transition: max-height 0.3s ease-in-out, padding 0.4s ease-in-out;
+/* for transition above */
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .nav-links.show {
+            max-height: 400px;
+            padding: 10px 0;
+          
+          
+      display: flex;
+    }
+  
+    .hamburger {
+             display: block;
+      color: #003366;
+    }
+  }
+  
+  /* new css for not being boring and common as well */
+
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  /* background: rgba(255, 255, 255, 0.7); */
+  background-color: #E4EFE7;/* this is the change than before*/
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 30px 30px 30px 30px; /* this is the change than before*/
+}
+
+.nav-links a {
+  position: relative;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0;
+  height: 2px;
+  background: #007BFF;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/*  */
